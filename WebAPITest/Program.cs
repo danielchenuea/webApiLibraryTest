@@ -1,6 +1,10 @@
+using WebAPITest.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblyContaining<Program>());
+builder.Services.AddSingleton<DbContext>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

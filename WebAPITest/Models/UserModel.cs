@@ -1,6 +1,9 @@
-﻿namespace WebAPITest.Models;
+﻿using MediatR;
+using WebAPITest.Models.Http;
 
-public class UserModel
+namespace WebAPITest.Models;
+
+public class UserModel : IRequest
 {
     public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
